@@ -1,0 +1,19 @@
+{
+  "name": "eleventy-load-website",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "cross-env ELEVENTY_ENV=production eleventy",
+    "serve": "cross-env ELEVENTY_ENV=development eleventy --serve",
+    "watch": "cross-env ELEVENTY_ENV=development eleventy --watch"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "cross-env": "^7.0.2",
+    "eleventy-critical-css": "^0.1.2",
+    "eleventy-load": "file:lib/eleventy-load",
+    "eleventy-load-css": "file:lib/eleventy-load-css",
+    "eleventy-load-file": "file:lib/eleventy-load-file",
+    "eleventy-load-html": "file:lib/eleventy-load-html",
+    "eleventy-load-sass": "file:lib/eleventy-load-sass"
+  }
+}

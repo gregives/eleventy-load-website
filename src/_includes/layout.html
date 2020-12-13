@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% if meta.title or meta.site -%}
+    <title>
+        {%- if meta.title -%}
+        {{ meta.title }}
+        {%- endif -%}
+        {% if meta.title and meta.site %} | {% endif %}
+        {%- if meta.site -%}
+        {{ meta.site }}
+        {%- endif -%}
+    </title>
+    {%- endif %}
+
+    {% if meta.description -%}
+    <meta name="description" content="{{ meta.description }}">
+    {%- endif %}
+</head>
+
+<body>
+    {{ content }}
+</body>
+
+</html>

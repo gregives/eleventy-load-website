@@ -1,0 +1,15 @@
+[submodule "lib/eleventy-load"]
+	path = lib/eleventy-load
+	url = git@github.com:gregives/eleventy-load.git
+[submodule "lib/eleventy-load-html"]
+	path = lib/eleventy-load-html
+	url = git@github.com:gregives/eleventy-load-html.git
+[submodule "lib/eleventy-load-file"]
+	path = lib/eleventy-load-file
+	url = git@github.com:gregives/eleventy-load-file.git
+[submodule "lib/eleventy-load-sass"]
+	path = lib/eleventy-load-sass
+	url = git@github.com:gregives/eleventy-load-sass.git
+[submodule "lib/eleventy-load-css"]
+	path = lib/eleventy-load-css
+	url = git@github.com:gregives/eleventy-load-css.git
