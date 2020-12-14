@@ -32,7 +32,9 @@ module.exports = (config) => {
         ],
     });
 
-    config.addPlugin(require("eleventy-critical-css"));
+    config.addPlugin(require("eleventy-critical-css"), {
+        minify: true
+    });
 
     return {
         dir: {

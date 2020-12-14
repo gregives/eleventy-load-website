@@ -20,10 +20,14 @@
     {% if meta.description -%}
     <meta name="description" content="{{ meta.description }}">
     {%- endif %}
+
+    <link rel="stylesheet" href="assets/style.scss">
 </head>
 
 <body>
-    {{ content }}
+    <main class="content">
+        {{ content }}
+    </main>
 </body>
 
 </html>
