@@ -1,9 +1,63 @@
 @import "mixins";
 
 :root {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+}
+
+.header {
+    &__name {
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    &__inner {
+        @include container;
+
+        border-bottom: 1px solid lightgrey;
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 0;
+    }
+
+    &__link {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        & + & {
+            margin-left: 2rem;
+        }
+    }
 }
 
 .content {
     @include container;
+
+    margin-top: 5rem;
+
+    h1 {
+        margin-bottom: 3rem;
+    }
+
+    > {
+        *:not(:first-child) {
+            margin-top: 1rem;
+        }
+
+        pre:not(:first-child) {
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+    }
+}
+
+a {
+    color: inherit;
+
+    &:hover {
+        text-decoration: none;
+    }
 }
