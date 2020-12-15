@@ -1,4 +1,4 @@
-# Making complicated Eleventy sites easy
+# Making complicated Eleventy sites&nbsp;easy
 
 Wish there was a way to import Sass files as easily as CSS files? Now there is!
 
@@ -45,15 +45,22 @@ body h1 {
 ```
 
 </div>
-</div>
-<div>
+<div class="demonstration__full">
 
-with just a little set-up:
+with some simple set-up:
 
 ```js
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(require("eleventy-load"), {
         rules: [
+            {
+                test: /\.html$/,
+                loaders: [
+                    {
+                        loader: require("eleventy-load-html"),
+                    },
+                ],
+            },
             {
                 test: /\.scss$/,
                 loaders: [
@@ -65,6 +72,9 @@ module.exports = function(eleventyConfig) {
                     },
                     {
                         loader: require("eleventy-load-file"),
+                        options: {
+                            name: "[hash].css"
+                        }
                     },
                 ],
             },
@@ -74,3 +84,11 @@ module.exports = function(eleventyConfig) {
 ```
 
 </div>
+</div>
+
+The above configuration instructs eleventy-load to look at files ending in `.html` and `.scss`. The 'loaders' process the files in different ways:
+
+- eleventy-load-html finds the dependencies in a HTML file, in this case the `styles.scss` file which we linked.
+- eleventy-load-sass compiles the `styles.scss` file into CSS.
+- eleventy-load-css finds dependencies in the CSS (there aren't any in this example).
+- eleventy-load-file saves the CSS into a file in your Eleventy output directory, with the filename `[hash].css`, where `[hash]` is a hash of the CSS.

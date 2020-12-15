@@ -1,13 +1,27 @@
+code {
+    background-color: #eaeaea;
+    border-radius: 0.25rem;
+    padding: 0 0.25rem 0.125rem;
+}
+
 .code {
     background-color: #282c34;
-    border-radius: 0.5rem;
+    border-radius: 0;
     color: #abb2bf;
     display: block;
-    margin-left: -1rem;
-    margin-right: -1rem;
+    margin-left: -(100% / 18);
+    margin-right: -(100% / 18);
     overflow-x: auto;
-    padding: 1rem;
+    padding: 1rem (100% / 18);
+
+    @media (min-width: 30rem) {
+        border-radius: 0.5rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding: 1rem;
+    }
 }
+
 
 .code__comment,
 .code__quote {
