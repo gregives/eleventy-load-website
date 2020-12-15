@@ -64,6 +64,18 @@
     }
 }
 
+.demonstration {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -2rem;
+
+    > div {
+        flex-grow: 1;
+        padding: 0 2rem;
+        max-width: 100%;
+    }
+}
+
 a {
     color: inherit;
 
