@@ -1,3 +1,10 @@
+const markdown = require("markdown-it");
+const highlight = require("highlight.js");
+
+highlight.configure({
+    classPrefix: "code__",
+});
+
 module.exports = (config) => {
     config.addPlugin(require("eleventy-load"), {
         rules: [
@@ -43,6 +50,27 @@ module.exports = (config) => {
     config.setLiquidOptions({
         dynamicPartials: true,
     });
+
+    // Options for markdown-it
+    config.setLibrary(
+        "md",
+        markdown({
+            html: true,
+            typographer: true,
+            langPrefix: "code code--",
+            highlight(str, lang) {
+                if (lang && highlight.getLanguage(lang)) {
+                    try {
+                        return highlight.highlight(lang, str).value;
+                    } catch {
+                        // Fallback to default
+                    }
+                }
+
+                return "";
+            },
+        })
+    );
 
     config.addWatchTarget("./src/");
 

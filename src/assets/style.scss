@@ -1,8 +1,17 @@
+@import "normalize.css/normalize";
 @import "mixins";
+@import "syntax";
 
 :root {
     font-family: Inter, system-ui, -apple-system, sans-serif;
     line-height: 1.5;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 .header {
@@ -36,6 +45,7 @@
 .content {
     @include container;
 
+    margin-bottom: 5rem;
     margin-top: 5rem;
 
     h1 {
@@ -57,7 +67,8 @@
 a {
     color: inherit;
 
-    &:hover {
+    &:hover,
+    &:focus {
         text-decoration: none;
     }
 }

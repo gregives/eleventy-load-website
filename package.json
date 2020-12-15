@@ -14,6 +14,10 @@
     "eleventy-load-css": "file:lib/eleventy-load-css",
     "eleventy-load-file": "file:lib/eleventy-load-file",
     "eleventy-load-html": "file:lib/eleventy-load-html",
-    "eleventy-load-sass": "file:lib/eleventy-load-sass"
+    "eleventy-load-sass": "file:lib/eleventy-load-sass",
+    "highlight.js": "^10.4.1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }

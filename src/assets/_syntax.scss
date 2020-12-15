@@ -1,0 +1,79 @@
+.code {
+    background-color: #282c34;
+    border-radius: 0.5rem;
+    color: #abb2bf;
+    display: block;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    overflow-x: auto;
+    padding: 1rem;
+}
+
+.code__comment,
+.code__quote {
+    color: #5c6370;
+    font-style: italic;
+}
+
+.code__doctag,
+.code__keyword,
+.code__formula {
+    color: #c678dd;
+}
+
+.code__section,
+.code__name,
+.code__selector-tag,
+.code__deletion,
+.code__subst {
+    color: #e06c75;
+}
+
+.code__literal {
+    color: #56b6c2;
+}
+
+.code__string,
+.code__regexp,
+.code__addition,
+.code__attribute,
+.code__meta-string {
+    color: #98c379;
+}
+
+.code__built_in,
+.code__class .code__title {
+    color: #e6c07b;
+}
+
+.code__attr,
+.code__variable,
+.code__template-variable,
+.code__type,
+.code__selector-class,
+.code__selector-attr,
+.code__selector-pseudo,
+.code__number {
+    color: #d19a66;
+}
+
+.code__symbol,
+.code__bullet,
+.code__link,
+.code__meta,
+.code__selector-id,
+.code__title {
+    color: #61aeee;
+}
+
+.code__emphasis {
+    font-style: italic;
+}
+
+.code__strong {
+    font-weight: bold;
+}
+
+.code__link {
+    text-decoration: underline;
+}
