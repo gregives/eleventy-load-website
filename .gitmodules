@@ -10,6 +10,9 @@
 [submodule "lib/eleventy-load-html"]
 	path = lib/eleventy-load-html
 	url = git@github.com:gregives/eleventy-load-html.git
+[submodule "lib/eleventy-load-js"]
+	path = lib/eleventy-load-js
+	url = git@github.com:gregives/eleventy-load-js.git
 [submodule "lib/eleventy-load-sass"]
 	path = lib/eleventy-load-sass
 	url = git@github.com:gregives/eleventy-load-sass.git

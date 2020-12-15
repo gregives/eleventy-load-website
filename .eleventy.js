@@ -36,6 +36,17 @@ module.exports = (config) => {
                     },
                 ],
             },
+            {
+                test: /\.js$/,
+                loaders: [
+                    {
+                        loader: require("eleventy-load-js"),
+                    },
+                    {
+                        loader: require("eleventy-load-file"),
+                    },
+                ],
+            },
         ],
     });
 
