@@ -92,3 +92,12 @@ The above configuration instructs eleventy-load to look at files ending in `.htm
 - eleventy-load-sass compiles the `styles.scss` file into CSS.
 - eleventy-load-css finds dependencies in the CSS (there aren't any in this example).
 - eleventy-load-file saves the CSS into a file in your Eleventy output directory, with the filename `[hash].css`, where `[hash]` is a hash of the CSS.
+
+## Ready to make an awesome site?
+
+[How to add eleventy-load to your Eleventy project](/usage)
+
+[Discover the loaders that already exist](/loaders)
+
+[Find out how to write your own loader (it's easy)](/api)
+

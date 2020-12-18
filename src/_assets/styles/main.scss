@@ -59,9 +59,11 @@ body {
             margin-top: 1rem;
         }
 
-        pre:not(:first-child) {
-            margin-bottom: 2rem;
-            margin-top: 2rem;
+        pre, h2, h3 {
+            &:not(:first-child) {
+                margin-bottom: 2rem;
+                margin-top: 2rem;
+            }
         }
     }
 }
