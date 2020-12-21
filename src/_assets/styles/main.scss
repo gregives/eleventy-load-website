@@ -6,6 +6,7 @@
     font-family: Inter, system-ui, -apple-system, sans-serif;
     height: 100%;
     line-height: 1.5;
+    overflow-x: hidden;
 }
 
 body {
@@ -30,23 +31,32 @@ main {
 
     border-bottom: 1px solid #eaeaea;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 2rem 0;
+    padding: 2rem 0 1rem;
 
     &__name {
         font-weight: 700;
+        margin-bottom: 1rem;
+        margin-right: 2rem;
         text-decoration: none;
     }
 
+    &__links {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     &__link {
+        margin-bottom: 1rem;
         text-decoration: none;
 
         &:hover {
             text-decoration: underline;
         }
 
-        & + & {
-            margin-left: 2rem;
+        &:not(:last-child) {
+            margin-right: calc(1rem + 1vw);
         }
     }
 }
@@ -70,24 +80,6 @@ main {
             &:not(:first-child) {
                 margin-bottom: 2rem;
                 margin-top: 2rem;
-            }
-        }
-    }
-
-    table {
-        width: 100%;
-
-        td, th {
-            padding-bottom: 0.5rem;
-            padding-top: 0.5rem;
-            text-align: left;
-    
-            &:not(:first-child) {
-                padding-left: 1rem;
-            }
-    
-            &:not(:last-child) {
-                padding-right: 1rem;
             }
         }
     }
@@ -123,11 +115,24 @@ main {
 
     border-top: 1px solid #eaeaea;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 2rem 0;
 
+    &__links {
+        margin-bottom: 1rem;
+        > * {
+            margin-right: 1rem;
+        }
+    }
+
+    &__edit {
+        margin-bottom: 1rem;
+    }
+
     &__information {
         margin: 0;
+        width: 100%;
     }
 }
 
