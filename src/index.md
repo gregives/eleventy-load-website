@@ -95,9 +95,13 @@ The above configuration instructs eleventy-load to look at files ending in `.htm
 
 ## Ready to make an awesome site?
 
+<div class="content__links">
+
 [How to add eleventy-load to your Eleventy project](/usage)
 
 [Discover the loaders that already exist](/loaders)
 
 [Find out how to write your own loader (it's easy)](/api)
+
+</div>
 
