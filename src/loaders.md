@@ -13,7 +13,7 @@ From importing Sass into your project to emitting hashed assets, here is a list 
         {% for loader in loaders %}
         <tr>
             <td>
-                <a href="{{ loader[1].link }}">eleventy-load-{{ loader[0] }}</a>
+                <a href="{{ loader[1].link }}">{{ loader[0] }}</a>
             </td>
             <td>
                 {{ loader[1].description }}
