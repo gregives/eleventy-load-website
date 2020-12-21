@@ -1,6 +1,6 @@
 # How to use eleventy-load
 
-## 1. Install eleventy-load as a dependency
+## 1. Install eleventy-load
 
 We'll assume that you already know [how to create a site with Eleventy](https://www.11ty.dev/docs/getting-started/). To use eleventy-load in our Eleventy project, first we need to install it as a dependency.
 
@@ -26,7 +26,7 @@ Try giving eleventy-load some rules!
 
 ## 3. Install loaders
 
-Loaders are the brains of eleventy-load; without them, nothing will happen. Say we want to import Sass files just like we would import CSS files, with a `link` element.
+Loaders are the brains of eleventy-load; without them, nothing will happen. Say that we want to import Sass files like we would import CSS files, with a `link` element.
 
 ```html
 <link rel="stylesheet" href="styles.scss">
