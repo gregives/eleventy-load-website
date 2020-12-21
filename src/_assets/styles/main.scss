@@ -4,12 +4,19 @@
 
 :root {
     font-family: Inter, system-ui, -apple-system, sans-serif;
+    height: 100%;
     line-height: 1.5;
-    overflow-x: hidden;
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
     overflow-x: hidden;
+}
+
+main {
+    flex-grow: 1;
 }
 
 *,
@@ -59,10 +66,28 @@ body {
             margin-top: 1rem;
         }
 
-        pre, h2, h3 {
+        pre, h2, h3, table {
             &:not(:first-child) {
                 margin-bottom: 2rem;
                 margin-top: 2rem;
+            }
+        }
+    }
+
+    table {
+        width: 100%;
+
+        td, th {
+            padding-bottom: 0.5rem;
+            padding-top: 0.5rem;
+            text-align: left;
+    
+            &:not(:first-child) {
+                padding-left: 1rem;
+            }
+    
+            &:not(:last-child) {
+                padding-right: 1rem;
             }
         }
     }

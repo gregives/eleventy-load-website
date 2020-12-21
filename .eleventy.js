@@ -80,7 +80,7 @@ module.exports = (config) => {
 
                 return "";
             },
-        })
+        }).disable('code')
     );
 
     config.addWatchTarget("./src/");
