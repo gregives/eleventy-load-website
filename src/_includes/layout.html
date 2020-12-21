@@ -25,19 +25,19 @@
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" media="print" onload="this.media='all'" />
+    <link rel="preload" as="style" href="{{ meta.fonts }}" />
+    <link rel="stylesheet" href="{{ meta.fonts }}" media="print" onload="this.media='all'" />
     <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
+        <link rel="stylesheet" href="{{ meta.fonts }}" />
     </noscript>
 </head>
 
 <body>
-    {% include 'header.html' %}
+    {% include "header.html" %}
     <main class="content">
         {{ content }}
     </main>
-    {% include 'footer.html' %}
+    {% include "footer.html" %}
 
     <script src="_assets/scripts/main.js"></script>
 </body>
