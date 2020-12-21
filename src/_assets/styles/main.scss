@@ -94,6 +94,7 @@ main {
 
     &__links {
         a {
+            text-decoration: none;
             position: relative;
 
             &::after {
@@ -106,8 +107,12 @@ main {
                 transition: transform 150ms ease-out;
             }
 
-            &:hover::after {
-                transform: translateX(0.25rem);
+            &:hover {
+                text-decoration: underline;
+
+                &::after {
+                    transform: translateX(0.25rem);
+                }
             }
         }
     }
