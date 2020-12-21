@@ -47,8 +47,24 @@ module.exports = (config) => {
                     },
                 ],
             },
+            {
+                test: /\.svg$/,
+                loaders: [
+                    {
+                        loader: function (content) {
+                            return `data:image/svg+xml;base64,${Buffer.from(content).toString('base64')}`
+                        }
+                    },
+                ]
+            }
         ],
     });
+
+    config.addShortcode("icon", (name) => {
+        const src = `../node_modules/bootstrap-icons/icons/${name.toLowerCase()}.svg`
+        const alt = name.replace("-", " ")
+        return `<img class="icon" src="${src}" alt="${alt}">`
+    })
 
     config.addPlugin(require("eleventy-critical-css"), {
         minify: true,

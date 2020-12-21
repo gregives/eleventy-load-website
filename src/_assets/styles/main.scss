@@ -190,5 +190,19 @@ a {
     &:hover,
     &:focus {
         text-decoration: none;
+
+        > .icon {
+            opacity: 1;
+        }
     }
+
+    > .icon {
+        opacity: 0.5;
+    }
+}
+
+.icon {
+    height: 1.2em;
+    margin-top: 0.15em;
+    width: 1.2em;
 }

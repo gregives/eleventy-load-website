@@ -19,6 +19,7 @@
     "highlight.js": "^10.4.1"
   },
   "dependencies": {
+    "bootstrap-icons": "^1.2.1",
     "normalize.css": "^8.0.1"
   }
 }
