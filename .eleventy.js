@@ -14,7 +14,7 @@ module.exports = (config) => {
                     {
                         loader: require("eleventy-load-html"),
                         options: {
-                            minimize: true,
+                            minimize: process.env.ELEVENTY_ENV === 'production',
                         },
                     },
                 ],
@@ -66,9 +66,11 @@ module.exports = (config) => {
         return `<img class="icon" src="${src}" alt="${alt}">`
     })
 
-    config.addPlugin(require("eleventy-critical-css"), {
-        minify: true,
-    });
+    if (process.env.ELEVENTY_ENV === 'production') {
+        config.addPlugin(require("eleventy-critical-css"), {
+            minify: true,
+        });
+    }
 
     // Deep merge when combining the Data Cascade
     config.setDataDeepMerge(true);
