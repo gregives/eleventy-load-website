@@ -1,0 +1,4 @@
+{
+    "link": "https://github.com/gregives/eleventy-load-file",
+    "description": "Emit file to the output directory and return its URL"
+}
