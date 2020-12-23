@@ -104,10 +104,10 @@ That's all it takes to set up eleventy-load to import Sass files using `link` el
 
 <div class="content__links">
 
-[See more examples of eleventy-load](/examples)
+[See more examples of eleventy-load](/examples/)
 
-[Discover the loaders that you can use](/loaders)
+[Discover the loaders that you can use](/loaders/)
 
-[Write your own loader (don't worry, it's easy)](/api)
+[Write your own loader (don't worry, it's easy)](/api/)
 
 </div>

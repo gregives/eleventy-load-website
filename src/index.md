@@ -90,11 +90,11 @@ module.exports = function(eleventyConfig) {
 
 <div class="content__links">
 
-[How to add eleventy-load to your Eleventy project](/usage)
+[How to add eleventy-load to your Eleventy project](/usage/)
 
-[Discover the loaders that you can use](/loaders)
+[Discover the loaders that you can use](/loaders/)
 
-[Write your own loader (don't worry, it's easy)](/api)
+[Write your own loader (don't worry, it's easy)](/api/)
 
 </div>
 
