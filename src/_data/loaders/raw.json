@@ -1,4 +1,0 @@
-{
-    "link": "https://github.com/gregives/eleventy-load-raw",
-    "description": "Load the file as a raw `Buffer` instead of `String`"
-}
