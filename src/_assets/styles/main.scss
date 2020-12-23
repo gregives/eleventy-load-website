@@ -119,14 +119,14 @@ main {
     &__links {
         a {
             text-decoration: none;
+            margin-right: 1.5rem;
             position: relative;
 
-            &::after {
+            &::before {
+                bottom: -0.125rem;
                 content: '\2794';
-                height: 100%;
-                left: 100%;
-                margin-left: -0.25rem;
-                padding-left: 0.5rem;
+                right: -1.5rem;
+                padding-left: 1rem;
                 position: absolute;
                 transition: transform 150ms ease-out;
             }
@@ -134,7 +134,7 @@ main {
             &:hover {
                 text-decoration: underline;
 
-                &::after {
+                &::before {
                     transform: translateX(0.25rem);
                 }
             }
