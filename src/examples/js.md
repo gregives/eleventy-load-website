@@ -45,3 +45,9 @@ module.exports = function (eleventyConfig) {
     });
 }
 ```
+
+<div class="content__links">
+
+[See more examples of eleventy-load](/examples/)
+
+</div>
