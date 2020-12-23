@@ -64,8 +64,8 @@ main {
 .content {
     @include container;
 
-    margin-bottom: 5rem;
-    margin-top: 5rem;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
 
     h1 {
         margin-bottom: 3rem;
@@ -200,6 +200,14 @@ a {
 
     > .icon {
         opacity: 0.5;
+    }
+}
+
+ul, ol {
+    padding-left: 1rem;
+
+    ul, ol {
+        padding-left: 2rem;
     }
 }
 

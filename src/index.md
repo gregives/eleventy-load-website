@@ -1,4 +1,4 @@
-# Making complicated Eleventy sites&nbsp;easy
+# Making Eleventy sites&nbsp;easy
 
 Wish there was a way to import Sass files as easily as CSS files? Now there is!
 
