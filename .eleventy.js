@@ -1,9 +1,5 @@
-const markdown = require("markdown-it");
-const highlight = require("highlight.js");
-
-highlight.configure({
-    classPrefix: "code__",
-});
+const eleventy = require('./src/_config/eleventy')
+const markdown = require('./src/_config/markdown')
 
 module.exports = (config) => {
     config.addPlugin(require("eleventy-load"), {
@@ -11,6 +7,9 @@ module.exports = (config) => {
             {
                 test: /\.(md|html)$/,
                 loaders: [
+                    {
+                        loader: eleventy
+                    },
                     {
                         loader: require("eleventy-load-html"),
                         options: {
@@ -51,7 +50,7 @@ module.exports = (config) => {
                 test: /\.svg$/,
                 loaders: [
                     {
-                        loader: function (content) {
+                        loader: (content) => {
                             return `data:image/svg+xml;base64,${Buffer.from(content).toString('base64')}`
                         }
                     },
@@ -81,27 +80,7 @@ module.exports = (config) => {
     });
 
     // Options for markdown-it
-    config.setLibrary(
-        "md",
-        markdown({
-            html: true,
-            typographer: true,
-            langPrefix: "code code--",
-            highlight(str, lang) {
-                if (lang && highlight.getLanguage(lang)) {
-                    try {
-                        return highlight.highlight(lang, str).value;
-                    } catch {
-                        // Fallback to default
-                    }
-                }
-
-                return "";
-            },
-        })
-            .disable("code")
-            .use(require("markdown-it-attrs"))
-    );
+    config.setLibrary("md", markdown);
 
     config.addWatchTarget("./src/");
 
