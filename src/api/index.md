@@ -2,7 +2,9 @@
 
 An eleventy-load loader is just a JavaScript function, nothing complicated! The function is passed two arguments: the `content` of the file being loaded and the user-provided `options` for the loader.
 
-Let's write a loader to convert a text file to uppercase but only if the user passes `uppercase: true` as an option. Of course, this loader could be applied to any file, it just uppercases the content.
+## An example loader
+
+Let's write a loader to convert a text file to uppercase, _but only_ if the user passes `uppercase: true` as an option. Of course, this loader could be applied to any file, it just uppercases the content.
 
 ```js {data-file=".eleventy.js"}
 module.exports = function(eleventyConfig) {
@@ -35,7 +37,7 @@ module.exports = function(content, options) {
 ```
 
 ```js {data-file=".eleventy.js"}
-const uppercaseLoader = require("./uppercase")
+const uppercaseLoader = require("./uppercase");
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(require("eleventy-load"), {
