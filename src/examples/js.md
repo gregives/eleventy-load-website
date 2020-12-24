@@ -1,25 +1,17 @@
 ---
-description: Bundle JavaScript with webpack
+title: Bundle JavaScript with webpack
 ---
 
-# Bundle JavaScript with webpack
+# {{ title }}
 
-It's really easy to bundle JavaScript using eleventy-load-js. Add your `script` element as usual, with a `src` attribute.
+Add your `script` element as usual, with a `src` attribute. The JavaScript will be bundled with webpack using eleventy-load-js.
 
-```html
+```html {data-file="index.html"}
 <script src="index.js"></script>
 ```
 
-**Note:** eleventy-load-html looks for files in your input directory, so if your JavaScript file lives in an `assets` directory, you need to include this like `assets/index.js`.
-
-In your Eleventy configuration file `.eleventy.js`, add the eleventy-load plugin and configure the rules so that you can link Sass files. Each loader is needed to do a different thing:
-
-- eleventy-load-html finds dependencies, like your JavaScript file, in your Markdown and HTML files. Remember that eleventy-load uses **input** paths to apply loaders, hence we need to match `.md` in our test.
-- eleventy-load-js bundles the JavaScript file using [webpack](https://webpack.js.org/).
-- eleventy-load-file saves the bundled JavaScript to a file in your output directory.
-
-```js
-module.exports = function (eleventyConfig) {
+```js {data-file=".eleventy.js"}
+module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(require("eleventy-load"), {
         rules: [
             {
@@ -27,8 +19,8 @@ module.exports = function (eleventyConfig) {
                 loaders: [
                     {
                         loader: require("eleventy-load-html")
-                    },
-                ],
+                    }
+                ]
             },
             {
                 test: /\.js$/,
@@ -38,12 +30,12 @@ module.exports = function (eleventyConfig) {
                     },
                     {
                         loader: require("eleventy-load-file")
-                    },
-                ],
+                    }
+                ]
             }
         ]
     });
-}
+};
 ```
 
 <div class="content__links">

@@ -1,5 +1,5 @@
 # Examples
 
 {% for example in collections.example %}
-- [{{ example.data.description }}]({{ example.url }})
+- [{{ example.data.title }}]({{ example.url }})
 {% endfor %}
