@@ -20,7 +20,7 @@ module.exports = function(eleventyConfig) {
                     {
                         loader: require("eleventy-load-html")
                     }
-                ],
+                ]
             },
             {
                 test: /\.(avif|gif|png|jpe?g|webp)$/,
