@@ -31,16 +31,15 @@ body {
 and end up with this
 
 ```html {data-file="index.html"}
-<link rel="stylesheet" href="/assets/2a78524b.css">
+<link rel="stylesheet" href="/assets/a98164b2.css">
 ```
 
-```css {data-file="2a78524b.css"}
+```css {data-file="a98164b2.css"}
 body {
-    background-color: linen;
+  background-color: linen;
 }
-
 body h1 {
-    color: 5rem;
+  font-size: 5rem;
 }
 ```
 
