@@ -10,9 +10,9 @@ npm install --save-dev eleventy-load
 
 ## 2. Add eleventy-load as a plugin
 
-After we have installed eleventy-load, we can add it as an Eleventy plugin in our `.eleventy.js` file.
+After we have installed eleventy-load, we can add it as a plugin in our Eleventy configuration file.
 
-```js
+```js {data-file=".eleventy.js"}
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(require("eleventy-load"));
 };
@@ -28,7 +28,7 @@ Try giving eleventy-load some rules!
 
 Loaders are the brains of eleventy-load; without them, nothing will happen. Say that we want to import Sass files like we would import CSS files, with a `link` element.
 
-```html
+```html {data-file="index.html"}
 <link rel="stylesheet" href="styles.scss">
 ```
 
@@ -64,7 +64,7 @@ Note that the test is matched against the **input** filename, not the output.
 
 We can set up rules so that eleventy-load imports Sass files using `link` elements.
 
-```js
+```js {data-file=".eleventy.js"}
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(require("eleventy-load"), {
         rules: [

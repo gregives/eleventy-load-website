@@ -98,7 +98,9 @@ module.exports = (config) => {
 
                 return "";
             },
-        }).disable('code')
+        })
+            .disable("code")
+            .use(require("markdown-it-attrs"))
     );
 
     config.addWatchTarget("./src/");

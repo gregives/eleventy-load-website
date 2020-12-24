@@ -9,11 +9,11 @@ Introducing eleventy-load, an [Eleventy](https://11ty.dev/) plugin which resolve
 
 Write this
 
-```html
+```html {data-file="index.html"}
 <link rel="stylesheet" href="styles.scss">
 ```
 
-```scss
+```scss {data-file="styles.scss"}
 $massive: 5rem;
 
 body {
@@ -30,11 +30,11 @@ body {
 
 and end up with this
 
-```html
+```html {data-file="index.html"}
 <link rel="stylesheet" href="/assets/2a78524b.css">
 ```
 
-```css
+```css {data-file="2a78524b.css"}
 body {
     background-color: linen;
 }
@@ -49,7 +49,7 @@ body h1 {
 
 with some simple set-up:
 
-```js
+```js {data-file=".eleventy.js"}
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(require("eleventy-load"), {
         rules: [

@@ -5,6 +5,10 @@ code {
     padding: 0 0.25rem 0.125rem;
 }
 
+pre {
+    position: relative;
+}
+
 .code {
     background-color: #282c34;
     border-radius: 0;
@@ -21,6 +25,34 @@ code {
         margin-right: -1rem;
         padding: 1rem;
     }
+
+    &[data-file] {
+        padding: 2rem (100% / 18) 1rem;
+
+        @media (min-width: 30rem) {
+            padding: 2rem 1rem 1rem;
+        }
+
+        &::before {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 0;
+            content: attr(data-file);
+            font-size: 80%;
+            left: -(100% / 18);
+            padding: 0.125rem 1rem;
+            position: absolute;
+            right: -(100% / 18);
+            text-align: center;
+            top: 0;
+    
+            @media (min-width: 30rem) {
+                border-radius: 0.5rem 0.5rem 0 0;
+                left: -1rem;
+                right: -1rem;
+            }
+        }
+    }
+
 }
 
 
