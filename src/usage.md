@@ -35,9 +35,9 @@ Loaders are the brains of eleventy-load; without them, nothing will happen. Say 
 There are four things that loaders can do for us:
 
 1. Find the `link` element in the HTML template.
-2. Load the Sass and convert the Sass into CSS.
-3. Optionally, find dependencies (like images) in the CSS.
-4. Output the CSS into a file.
+2. Load the Sass and convert it into CSS.
+3. Optionally, find dependencies (like background images) in the CSS.
+4. Save the CSS into a file.
 
 Let's install these loaders now.
 
