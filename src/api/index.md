@@ -1,6 +1,6 @@
 # Writing a loader
 
-An eleventy-load loader is just a JavaScript function, nothing complicated! The function is passed two arguments: the `content` of the file being loaded and the user-provided `options` for the loader.
+An eleventy-load loader is **just a JavaScript function**, nothing complicated! The function is passed two arguments: the `content` of the file being loaded and the user-provided `options` for the loader.
 
 - [An example loader](#An-example-loader)
 - [Loader interface](#Loader-interface)
@@ -25,7 +25,11 @@ module.exports = function(eleventyConfig) {
                 loaders: [
                     {
                         loader: function(content, options) {
-                            return options.uppercase ? content.toUpperCase() : content;
+                            if (options.uppercase) {
+                                return content.toUpperCase();
+                            } else {
+                                return content;
+                            }
                         },
                         options: {
                             uppercase: true
@@ -42,7 +46,11 @@ Instead of writing the loader in your Eleventy configuration file, you might wan
 
 ```js {data-file="uppercase.js"}
 module.exports = function(content, options) {
-    return options.uppercase ? content.toUpperCase() : content;
+    if (options.uppercase) {
+        return content.toUpperCase();
+    } else {
+        return content;
+    }
 };
 ```
 
@@ -72,12 +80,12 @@ module.exports = function(eleventyConfig) {
 
 As well as the function parameters `content` and `options`, loaders also have access to the loader context. The context of a function can be accessed using the `this` keyword.
 
-- this.addDependency
-- this.config
-- this.emitFile
-- this.resource
-- this.resourcePath
-- this.resourceQuery
+- [this.addDependency](#this.addDependency)
+- [this.config](#this.config)
+- [this.emitFile](#this.emitFile)
+- [this.resource](#this.resource)
+- [this.resourcePath](#this.resourcePath)
+- [this.resourceQuery](#this.resourceQuery)
 
 ### this.addDependency
 

@@ -9,6 +9,10 @@
     overflow-x: hidden;
 }
 
+:target {
+    scroll-margin-top: 1rem;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -101,12 +105,12 @@ h1, h2, h3, h4, h5, h6 {
         }
 
         tbody tr:first-child td {
-            padding-top: 1rem;
+            padding-top: 0.5rem;
         }
 
         td, th {
-            padding-bottom: 0.5rem;
-            padding-top: 0.5rem;
+            padding-bottom: 0.25rem;
+            padding-top: 0.25rem;
             text-align: left;
             vertical-align: top;
 
