@@ -17,7 +17,9 @@
     "eleventy-load-js": "file:lib/eleventy-load-js",
     "eleventy-load-sass": "file:lib/eleventy-load-sass",
     "highlight.js": "^10.4.1",
-    "markdown-it-attrs": "^3.0.3"
+    "markdown-it-anchor": "^6.0.1",
+    "markdown-it-attrs": "^3.0.3",
+    "slugify": "^1.4.6"
   },
   "dependencies": {
     "bootstrap-icons": "^1.2.1",

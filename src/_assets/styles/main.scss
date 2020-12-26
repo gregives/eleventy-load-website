@@ -20,6 +20,10 @@ main {
     flex-grow: 1;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    position: relative;
+}
+
 *,
 *::before,
 *::after {
@@ -219,4 +223,22 @@ ul, ol {
     height: 1.2em;
     margin-top: 0.15em;
     width: 1.2em;
+}
+
+.anchor {
+    opacity: 0.1;
+    text-decoration: none;
+
+    &:hover {
+        opacity: 0.5;
+    }
+
+    &::after {
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
 }
