@@ -9,7 +9,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
     "cross-env": "^7.0.2",
-    "eleventy-critical-css": "^0.1.2",
+    "eleventy-critical-css": "file:lib/eleventy-critical-css",
     "eleventy-load": "file:lib/eleventy-load",
     "eleventy-load-css": "file:lib/eleventy-load-css",
     "eleventy-load-file": "file:lib/eleventy-load-file",

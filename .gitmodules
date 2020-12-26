@@ -16,3 +16,6 @@
 [submodule "lib/eleventy-load-sass"]
 	path = lib/eleventy-load-sass
 	url = git@github.com:gregives/eleventy-load-sass.git
+[submodule "lib/eleventy-critical-css"]
+	path = lib/eleventy-critical-css
+	url = git@github.com:gregives/eleventy-critical-css.git
