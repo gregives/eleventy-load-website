@@ -212,6 +212,10 @@ ul, ol {
 
     ul, ol {
         padding-left: 2rem;
+
+        li {
+            margin-top: 0.25rem;
+        }
     }
 
     li:not(:first-child) {
