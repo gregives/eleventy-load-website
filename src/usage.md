@@ -21,7 +21,7 @@ module.exports = function(eleventyConfig) {
 Now you can run your Eleventy project, but we haven't actually told eleventy-load to do anything yet...
 
 ```sh
-Try giving eleventy-load some rules!
+Try giving me some rules!
 ```
 
 ## 3. Install loaders
