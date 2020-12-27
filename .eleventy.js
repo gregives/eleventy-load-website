@@ -87,7 +87,7 @@ module.exports = (config) => {
     config.addShortcode("icon", (name) => {
         const src = `../node_modules/bootstrap-icons/icons/${name.toLowerCase()}.svg`
         const alt = name.replace("-", " ")
-        return `<img class="icon" src="${src}" alt="${alt}">`
+        return `<img class="icon" width="18" height="18" src="${src}" alt="${alt}">`
     })
 
     if (process.env.ELEVENTY_ENV === 'production') {
