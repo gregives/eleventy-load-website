@@ -5,7 +5,7 @@
     "build": "cross-env ELEVENTY_ENV=production eleventy",
     "serve": "cross-env ELEVENTY_ENV=development eleventy --serve",
     "watch": "cross-env ELEVENTY_ENV=development eleventy --watch",
-    "deploy": "gh-pages -d dist -b deploy -m 'Deploy eleventy-load website'"
+    "deploy": "rimraf dist && npm run build && gh-pages -d dist -b deploy -m \"Deploy eleventy-load website\""
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
@@ -21,6 +21,7 @@
     "highlight.js": "^10.4.1",
     "markdown-it-anchor": "^6.0.1",
     "markdown-it-attrs": "^3.0.3",
+    "rimraf": "^3.0.2",
     "slugify": "^1.4.6"
   },
   "dependencies": {
