@@ -4,7 +4,8 @@
   "scripts": {
     "build": "cross-env ELEVENTY_ENV=production eleventy",
     "serve": "cross-env ELEVENTY_ENV=development eleventy --serve",
-    "watch": "cross-env ELEVENTY_ENV=development eleventy --watch"
+    "watch": "cross-env ELEVENTY_ENV=development eleventy --watch",
+    "deploy": "gh-pages -d dist -b deploy -m 'Deploy eleventy-load website'"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
@@ -16,6 +17,7 @@
     "eleventy-load-html": "file:lib/eleventy-load-html",
     "eleventy-load-js": "file:lib/eleventy-load-js",
     "eleventy-load-sass": "file:lib/eleventy-load-sass",
+    "gh-pages": "^3.1.0",
     "highlight.js": "^10.4.1",
     "markdown-it-anchor": "^6.0.1",
     "markdown-it-attrs": "^3.0.3",
