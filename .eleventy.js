@@ -1,8 +1,12 @@
+const fs = require("fs")
+const path = require("path")
+const glob = require("glob")
 const eleventy = require('./src/_config/eleventy')
 const markdown = require('./src/_config/markdown')
 
 module.exports = (config) => {
     config.addPlugin(require("eleventy-load"), {
+        debug: true,
         rules: [
             {
                 test: /\.(md|html)$/,
@@ -47,6 +51,14 @@ module.exports = (config) => {
                 ],
             },
             {
+                test: /\.woff2?$/,
+                loaders: [
+                    {
+                        loader: require("eleventy-load-file"),
+                    },
+                ],
+            },
+            {
                 test: /\.svg$/,
                 loaders: [
                     {
@@ -59,6 +71,19 @@ module.exports = (config) => {
         ],
     });
 
+    // Create directory for fonts
+    const FONT_DIR = "src/_assets/styles/files";
+    if (!fs.existsSync(FONT_DIR)) fs.mkdirSync(FONT_DIR, { recursive: true });
+
+    // Copy fonts from fontsource into assets
+    ["inter"].forEach((font) => {
+        const files = glob.sync(`node_modules/@fontsource/${font}/files/*`);
+        files.forEach((file) => {
+            fs.copyFileSync(file, path.join(FONT_DIR, path.basename(file)))
+        })
+    })
+
+    // Icon shortcode using Bootstrap Icons
     config.addShortcode("icon", (name) => {
         const src = `../node_modules/bootstrap-icons/icons/${name.toLowerCase()}.svg`
         const alt = name.replace("-", " ")
