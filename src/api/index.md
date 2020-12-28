@@ -25,11 +25,7 @@ module.exports = function(eleventyConfig) {
                 loaders: [
                     {
                         loader: function(content, options) {
-                            if (options.uppercase) {
-                                return content.toUpperCase();
-                            } else {
-                                return content;
-                            }
+                            return options.uppercase ? content.toUpperCase() : content;
                         },
                         options: {
                             uppercase: true
@@ -46,11 +42,7 @@ Instead of writing the loader in your Eleventy configuration file, you might wan
 
 ```js {data-file="uppercase.js"}
 module.exports = function(content, options) {
-    if (options.uppercase) {
-        return content.toUpperCase();
-    } else {
-        return content;
-    }
+    return options.uppercase ? content.toUpperCase() : content;
 };
 ```
 
