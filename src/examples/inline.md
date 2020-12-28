@@ -1,5 +1,5 @@
 ---
-title: Inline Base64 images
+title: Create an icon shortcode with inline Base64 images
 ---
 
 # {{ title }}
