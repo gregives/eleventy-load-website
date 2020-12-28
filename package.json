@@ -5,7 +5,9 @@
     "build": "cross-env ELEVENTY_ENV=production eleventy",
     "serve": "cross-env ELEVENTY_ENV=development eleventy --serve",
     "watch": "cross-env ELEVENTY_ENV=development eleventy --watch",
-    "deploy": "rimraf dist && npm run build && gh-pages -d dist -b deploy -m \"Deploy eleventy-load website\""
+    "clean": "rimraf dist",
+    "predeploy": "npm run clean && npm run build",
+    "deploy": "gh-pages -d dist -b deploy -m \"Deploy eleventy-load website\""
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
