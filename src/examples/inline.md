@@ -31,9 +31,8 @@ module.exports = function (eleventyConfig) {
         loaders: [
           {
             loader: function (content) {
-              return `data:image/svg+xml;base64,${Buffer.from(content).toString(
-                "base64"
-              )}`;
+              const base64 = Buffer.from(content).toString("base64");
+              return `data:image/svg+xml;base64,${base64}`;
             },
           },
         ],
