@@ -1,4 +1,4 @@
 {
-    "link": "https://github.com/gregives/eleventy-load-html",
-    "description": "Find dependencies in and minify HTML"
+  "link": "https://github.com/gregives/eleventy-load-html",
+  "description": "Find dependencies in and minify HTML"
 }

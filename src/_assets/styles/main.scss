@@ -4,250 +4,259 @@
 @import "syntax";
 
 :root {
-    font-family: Inter, system-ui, -apple-system, sans-serif;
-    height: 100%;
-    line-height: 1.5;
-    overflow-x: hidden;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  height: 100%;
+  line-height: 1.5;
+  overflow-x: hidden;
 }
 
 :target {
-    scroll-margin-top: 1rem;
+  scroll-margin-top: 1rem;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 main {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    position: relative;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .header {
-    @include container;
+  @include container;
 
-    border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem 0 1rem;
+
+  &__name {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+    text-decoration: none;
+  }
+
+  &__links {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 2rem 0 1rem;
+  }
 
-    &__name {
-        font-weight: 700;
-        margin-bottom: 1rem;
-        margin-right: 2rem;
-        text-decoration: none;
-    }
-
-    &__links {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    &__link {
-        margin-bottom: 1rem;
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
-        }
-
-        &:not(:last-child) {
-            margin-right: calc(1rem + 1vw);
-        }
-    }
-}
-
-.content {
-    @include container;
-
-    margin-bottom: 3rem;
-    margin-top: 3rem;
-
-    h1 {
-        margin-bottom: 3rem;
-    }
-
-    > {
-        *:not(:first-child) {
-            margin-top: 1rem;
-        }
-
-        pre, h2, h3 {
-            &:not(:first-child) {
-                margin-bottom: 2rem;
-                margin-top: 2rem;
-            }
-        }
-
-        table:not(:first-child) {
-            margin-bottom: 1.5rem;
-            margin-top: 2rem;
-        }
-    }
-
-    table {
-        width: 100%;
-
-        th {
-            border-bottom: 1px solid #eaeaea;
-        }
-
-        tbody tr:first-child td {
-            padding-top: 0.5rem;
-        }
-
-        td, th {
-            padding-bottom: 0.25rem;
-            padding-top: 0.25rem;
-            text-align: left;
-            vertical-align: top;
-
-            &:not(:first-child) {
-                padding-left: 0.5rem;
-            }
-
-            &:not(:last-child) {
-                padding-right: 0.5rem;
-            }
-        }
-    }
-
-    &__links {
-        a {
-            text-decoration: none;
-            margin-right: 1.5rem;
-            position: relative;
-
-            &::before {
-                bottom: -0.125rem;
-                content: '\2794';
-                right: -1.5rem;
-                padding-left: 1rem;
-                position: absolute;
-                transition: transform 150ms ease-out;
-            }
-
-            &:hover {
-                text-decoration: underline;
-
-                &::before {
-                    transform: translateX(0.25rem);
-                }
-            }
-        }
-    }
-}
-
-.footer {
-    @include container;
-
-    border-top: 1px solid #eaeaea;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 2rem 0;
-
-    &__links {
-        margin-bottom: 1rem;
-        > * {
-            margin-right: 1rem;
-        }
-    }
-
-    &__edit {
-        margin-bottom: 1rem;
-    }
-
-    &__information {
-        margin: 0;
-        width: 100%;
-    }
-}
-
-.demonstration {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -2rem;
-
-    &__column {
-        flex-grow: 1;
-        padding: 0 2rem;
-        max-width: 100%;
-
-    }
-
-    &__full {
-        padding: 0 2rem;
-        width: 100%;
-    }
-}
-
-a {
-    color: inherit;
-
-    &:hover,
-    &:focus {
-        text-decoration: none;
-
-        > .icon {
-            opacity: 1;
-        }
-    }
-
-    > .icon {
-        opacity: 0.5;
-    }
-}
-
-ul, ol {
-    padding-left: 1.5rem;
-
-    ul, ol {
-        padding-left: 2rem;
-
-        li {
-            margin-top: 0.25rem;
-        }
-    }
-
-    li:not(:first-child) {
-        margin-top: 0.25rem;
-    }
-}
-
-.icon {
-    height: 1.2em;
-    margin-top: 0.15em;
-    width: 1.2em;
-}
-
-.anchor {
-    opacity: 0.1;
+  &__link {
+    margin-bottom: 1rem;
     text-decoration: none;
 
     &:hover {
-        opacity: 0.5;
+      text-decoration: underline;
     }
 
-    &::after {
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
+    &:not(:last-child) {
+      margin-right: calc(1rem + 1vw);
     }
+  }
+}
+
+.content {
+  @include container;
+
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+
+  h1 {
+    margin-bottom: 3rem;
+  }
+
+  > {
+    *:not(:first-child) {
+      margin-top: 1rem;
+    }
+
+    pre,
+    h2,
+    h3 {
+      &:not(:first-child) {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+      }
+    }
+
+    table:not(:first-child) {
+      margin-bottom: 1.5rem;
+      margin-top: 2rem;
+    }
+  }
+
+  table {
+    width: 100%;
+
+    th {
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    tbody tr:first-child td {
+      padding-top: 0.5rem;
+    }
+
+    td,
+    th {
+      padding-bottom: 0.25rem;
+      padding-top: 0.25rem;
+      text-align: left;
+      vertical-align: top;
+
+      &:not(:first-child) {
+        padding-left: 0.5rem;
+      }
+
+      &:not(:last-child) {
+        padding-right: 0.5rem;
+      }
+    }
+  }
+
+  &__links {
+    a {
+      text-decoration: none;
+      margin-right: 1.5rem;
+      position: relative;
+
+      &::before {
+        bottom: -0.125rem;
+        content: "\2794";
+        right: -1.5rem;
+        padding-left: 1rem;
+        position: absolute;
+        transition: transform 150ms ease-out;
+      }
+
+      &:hover {
+        text-decoration: underline;
+
+        &::before {
+          transform: translateX(0.25rem);
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  @include container;
+
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem 0;
+
+  &__links {
+    margin-bottom: 1rem;
+    > * {
+      margin-right: 1rem;
+    }
+  }
+
+  &__edit {
+    margin-bottom: 1rem;
+  }
+
+  &__information {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.demonstration {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -2rem;
+
+  &__column {
+    flex-grow: 1;
+    padding: 0 2rem;
+    max-width: 100%;
+  }
+
+  &__full {
+    padding: 0 2rem;
+    width: 100%;
+  }
+}
+
+a {
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+
+    > .icon {
+      opacity: 1;
+    }
+  }
+
+  > .icon {
+    opacity: 0.5;
+  }
+}
+
+ul,
+ol {
+  padding-left: 1.5rem;
+
+  ul,
+  ol {
+    padding-left: 2rem;
+
+    li {
+      margin-top: 0.25rem;
+    }
+  }
+
+  li:not(:first-child) {
+    margin-top: 0.25rem;
+  }
+}
+
+.icon {
+  height: 1.2em;
+  margin-top: 0.15em;
+  width: 1.2em;
+}
+
+.anchor {
+  opacity: 0.1;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &::after {
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 }

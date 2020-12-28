@@ -4,12 +4,12 @@ An eleventy-load loader is **just a JavaScript function**, nothing complicated! 
 
 - [An example loader](#An-example-loader)
 - [Loader interface](#Loader-interface)
-    - [this.addDependency](#this.addDependency)
-    - [this.config](#this.config)
-    - [this.emitFile](#this.emitFile)
-    - [this.resource](#this.resource)
-    - [this.resourcePath](#this.resourcePath)
-    - [this.resourceQuery](#this.resourceQuery)
+  - [this.addDependency](#this.addDependency)
+  - [this.config](#this.config)
+  - [this.emitFile](#this.emitFile)
+  - [this.resource](#this.resource)
+  - [this.resourcePath](#this.resourcePath)
+  - [this.resourceQuery](#this.resourceQuery)
 - [Raw loaders](#Raw-loaders)
 
 ## An example loader
@@ -17,54 +17,54 @@ An eleventy-load loader is **just a JavaScript function**, nothing complicated! 
 Let's write a loader to convert a text file to uppercase, _but only_ if the user passes `uppercase: true` as an option. Of course, this loader could be applied to any file, it just uppercases the content.
 
 ```js {data-file=".eleventy.js"}
-module.exports = function(eleventyConfig) {
-    eleventyConfig.addPlugin(require("eleventy-load"), {
-        rules: [
-            {
-                test: /\.txt$/,
-                loaders: [
-                    {
-                        loader: function(content, options) {
-                            return options.uppercase ? content.toUpperCase() : content;
-                        },
-                        options: {
-                            uppercase: true
-                        }
-                    }
-                ]
-            }
-        ]
-    });
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(require("eleventy-load"), {
+    rules: [
+      {
+        test: /\.txt$/,
+        loaders: [
+          {
+            loader: function (content, options) {
+              return options.uppercase ? content.toUpperCase() : content;
+            },
+            options: {
+              uppercase: true,
+            },
+          },
+        ],
+      },
+    ],
+  });
 };
 ```
 
 Instead of writing the loader in your Eleventy configuration file, you might want to move it into a module which exports the loader function.
 
 ```js {data-file="uppercase.js"}
-module.exports = function(content, options) {
-    return options.uppercase ? content.toUpperCase() : content;
+module.exports = function (content, options) {
+  return options.uppercase ? content.toUpperCase() : content;
 };
 ```
 
 ```js {data-file=".eleventy.js"}
 const uppercaseLoader = require("./uppercase");
 
-module.exports = function(eleventyConfig) {
-    eleventyConfig.addPlugin(require("eleventy-load"), {
-        rules: [
-            {
-                test: /\.txt$/,
-                loaders: [
-                    {
-                        loader: uppercaseLoader,
-                        options: {
-                            uppercase: true
-                        }
-                    }
-                ]
-            }
-        ]
-    });
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(require("eleventy-load"), {
+    rules: [
+      {
+        test: /\.txt$/,
+        loaders: [
+          {
+            loader: uppercaseLoader,
+            options: {
+              uppercase: true,
+            },
+          },
+        ],
+      },
+    ],
+  });
 };
 ```
 
@@ -84,9 +84,9 @@ As well as the function parameters `content` and `options`, loaders also have ac
 Add a dependency to be processed by eleventy-load. The dependency must be relative to the Eleventy project's input directory. You should always `await` adding a dependency, as the loaders processing the dependency might be asynchronous.
 
 ```js
-module.exports = async function(content, options) {
-    const license = await this.addDependency("LICENSE");
-    return license + content;
+module.exports = async function (content, options) {
+  const license = await this.addDependency("LICENSE");
+  return license + content;
 };
 ```
 
@@ -96,12 +96,12 @@ A copy of Eleventy's `_config` object available inside Eleventy transforms. Alth
 
 ```json
 {
-    "dir": {
-        "input": "src",
-        "includes": "_includes",
-        "data": "_data",
-        "output": "dist"
-    }
+  "dir": {
+    "input": "src",
+    "includes": "_includes",
+    "data": "_data",
+    "output": "dist"
+  }
 }
 ```
 
@@ -114,8 +114,8 @@ Save content to a file in the project's output directory. The function takes thr
 3. A flag which dictates whether the file should be saved. Defaults to `true`, pass `false` to dry run.
 
 ```js
-module.exports = async function(content, options) {
-    return this.emitFile(content, "assets/[name].[hash:12].css", false);
+module.exports = async function (content, options) {
+  return this.emitFile(content, "assets/[name].[hash:12].css", false);
 };
 ```
 

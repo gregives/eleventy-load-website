@@ -10,18 +10,18 @@ Introducing eleventy-load, an [Eleventy](https://11ty.dev/) plugin which resolve
 Write this
 
 ```html {data-file="index.html"}
-<link rel="stylesheet" href="styles.scss">
+<link rel="stylesheet" href="styles.scss" />
 ```
 
 ```scss {data-file="styles.scss"}
 $massive: 5rem;
 
 body {
-    background-color: linen;
+  background-color: linen;
 
-    h1 {
-        font-size: $massive;
-    }
+  h1 {
+    font-size: $massive;
+  }
 }
 ```
 
@@ -31,7 +31,7 @@ body {
 and end up with this
 
 ```html {data-file="index.html"}
-<link rel="stylesheet" href="/assets/a98164b2.css">
+<link rel="stylesheet" href="/assets/a98164b2.css" />
 ```
 
 ```css {data-file="a98164b2.css"}
@@ -49,36 +49,36 @@ body h1 {
 with some simple set-up:
 
 ```js {data-file=".eleventy.js"}
-module.exports = function(eleventyConfig) {
-    eleventyConfig.addPlugin(require("eleventy-load"), {
-        rules: [
-            {
-                test: /\.html$/,
-                loaders: [
-                    {
-                        loader: require("eleventy-load-html"),
-                    },
-                ],
-            },
-            {
-                test: /\.scss$/,
-                loaders: [
-                    {
-                        loader: require("eleventy-load-sass"),
-                    },
-                    {
-                        loader: require("eleventy-load-css"),
-                    },
-                    {
-                        loader: require("eleventy-load-file"),
-                        options: {
-                            name: "[hash].css"
-                        }
-                    },
-                ],
-            },
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(require("eleventy-load"), {
+    rules: [
+      {
+        test: /\.html$/,
+        loaders: [
+          {
+            loader: require("eleventy-load-html"),
+          },
         ],
-    });
+      },
+      {
+        test: /\.scss$/,
+        loaders: [
+          {
+            loader: require("eleventy-load-sass"),
+          },
+          {
+            loader: require("eleventy-load-css"),
+          },
+          {
+            loader: require("eleventy-load-file"),
+            options: {
+              name: "[hash].css",
+            },
+          },
+        ],
+      },
+    ],
+  });
 };
 ```
 
@@ -96,4 +96,3 @@ module.exports = function(eleventyConfig) {
 [Write your own loader (don't worry, it's easy)](/api/)
 
 </div>
-

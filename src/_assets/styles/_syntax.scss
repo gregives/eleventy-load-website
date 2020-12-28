@@ -1,218 +1,216 @@
 code {
-    background-color: #eaeaea;
-    border-radius: 0.25rem;
-    font-family: Monaco, Consolas, 'Lucida Console', monospace;
-    padding: 0 0.25rem 0.125rem;
+  background-color: #eaeaea;
+  border-radius: 0.25rem;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  padding: 0 0.25rem 0.125rem;
 }
 
 pre {
-    position: relative;
+  position: relative;
 }
 
 .code {
-    background-color: #011627;
-    border-radius: 0;
-    color: #d6deeb;
-    display: block;
-    margin-left: -(100% / 18);
-    margin-right: -(100% / 18);
-    overflow-x: auto;
-    padding: 1rem (100% / 18);
+  background-color: #011627;
+  border-radius: 0;
+  color: #d6deeb;
+  display: block;
+  margin-left: -(100% / 18);
+  margin-right: -(100% / 18);
+  overflow-x: auto;
+  padding: 1rem (100% / 18);
+
+  @media (min-width: 30rem) {
+    border-radius: 0.5rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 1rem;
+  }
+
+  &[data-file] {
+    padding: 2rem (100% / 18) 1rem;
 
     @media (min-width: 30rem) {
-        border-radius: 0.5rem;
-        margin-left: -1rem;
-        margin-right: -1rem;
-        padding: 1rem;
+      padding: 2rem 1rem 1rem;
     }
 
-    &[data-file] {
-        padding: 2rem (100% / 18) 1rem;
+    &::before {
+      background-color: #162939;
+      border-radius: 0;
+      content: attr(data-file);
+      font-size: 80%;
+      left: -(100% / 18);
+      padding: 0.125rem 1rem;
+      position: absolute;
+      right: -(100% / 18);
+      text-align: center;
+      top: 0;
 
-        @media (min-width: 30rem) {
-            padding: 2rem 1rem 1rem;
-        }
-
-        &::before {
-            background-color: #162939;
-            border-radius: 0;
-            content: attr(data-file);
-            font-size: 80%;
-            left: -(100% / 18);
-            padding: 0.125rem 1rem;
-            position: absolute;
-            right: -(100% / 18);
-            text-align: center;
-            top: 0;
-    
-            @media (min-width: 30rem) {
-                border-radius: 0.5rem 0.5rem 0 0;
-                left: -1rem;
-                right: -1rem;
-            }
-        }
+      @media (min-width: 30rem) {
+        border-radius: 0.5rem 0.5rem 0 0;
+        left: -1rem;
+        right: -1rem;
+      }
     }
-
+  }
 }
 
 .code__keyword {
-    color: #c792ea;
+  color: #c792ea;
 }
 
 .code__built_in {
-    color: #addb67;
+  color: #addb67;
 }
 
 .code__type {
-    color: #82aaff;
+  color: #82aaff;
 }
 
 .code__literal {
-    color: #ff5874;
+  color: #ff5874;
 }
 
 .code__number {
-    color: #F78C6C;
+  color: #f78c6c;
 }
 
 .code__regexp {
-    color: #5ca7e4;
+  color: #5ca7e4;
 }
 
 .code__string {
-    color: #ecc48d;
+  color: #ecc48d;
 }
 
 .code__subst {
-    color: #d3423e;
+  color: #d3423e;
 }
 
 .code__symbol {
-    color: #82aaff;
+  color: #82aaff;
 }
 
 .code__class {
-    color: #ffcb8b;
+  color: #ffcb8b;
 }
 
 .code__function {
-    color: #82AAFF;
+  color: #82aaff;
 }
 
 .code__title {
-    color: #DCDCAA;
-
+  color: #dcdcaa;
 }
 .code__params {
-    color: #7fdbca;
+  color: #7fdbca;
 }
-  
+
 .code__comment {
-    color: #637777;
+  color: #637777;
 }
 
 .code__doctag {
-    color: #7fdbca;
+  color: #7fdbca;
 }
 
 .code__meta {
-    color: #82aaff;
+  color: #82aaff;
 }
 
 .code__meta-keyword {
-    color: #82aaff;
+  color: #82aaff;
 }
 
 .code__meta-string {
-    color: #ecc48d;
+  color: #ecc48d;
 }
-  
+
 .code__section {
-    color: #82b1ff;
+  color: #82b1ff;
 }
 
 .code__tag,
 .code__name,
 .code__builtin-name {
-    color: #7fdbca;
+  color: #7fdbca;
 }
 
 .code__attr {
-    color: #7fdbca;
+  color: #7fdbca;
 }
 
 .code__attribute {
-    color: #80cbc4;
+  color: #80cbc4;
 }
 
 .code__variable {
-    color: #addb67;
+  color: #addb67;
 }
-  
+
 .code__bullet {
-    color: #d9f5dd;
+  color: #d9f5dd;
 }
 
 .code__code {
-    color: #80CBC4;
+  color: #80cbc4;
 }
 
 .code__emphasis {
-    color: #c792ea;
-    font-style: italic;
+  color: #c792ea;
+  font-style: italic;
 }
 
 .code__strong {
-    color: #addb67;
-    font-weight: bold;
+  color: #addb67;
+  font-weight: bold;
 }
 
 .code__formula {
-    color: #c792ea;
+  color: #c792ea;
 }
 
 .code__link {
-    color: #ff869a;
+  color: #ff869a;
 }
 
 .code__quote {
-    color: #697098;
-    font-style: italic;
+  color: #697098;
+  font-style: italic;
 }
 
 .code__selector-tag {
-    color: #ff6363;
+  color: #ff6363;
 }
 
 .code__selector-id {
-    color: #fad430;
+  color: #fad430;
 }
 
 .code__selector-class {
-    color: #addb67;
-    font-style: italic;
+  color: #addb67;
+  font-style: italic;
 }
 
 .code__selector-attr,
 .code__selector-pseudo {
-    color: #c792ea;
-    font-style: italic;
+  color: #c792ea;
+  font-style: italic;
 }
 
 .code__template-tag {
-    color: #c792ea;
+  color: #c792ea;
 }
 
 .code__template-variable {
-    color: #addb67;
+  color: #addb67;
 }
 
 .code__addition {
-    color: #addb67ff;
-    font-style: italic;
+  color: #addb67ff;
+  font-style: italic;
 }
 
 .code__deletion {
-    color: #EF535090;
-    font-style: italic;
+  color: #ef535090;
+  font-style: italic;
 }
