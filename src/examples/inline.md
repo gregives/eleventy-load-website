@@ -42,8 +42,8 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addShortcode("icon", function (name) {
     const src = `../node_modules/bootstrap-icons/icons/${name.toLowerCase()}.svg`;
-    const alt = name.replace("-", " ");
-    return `<img class="icon" src="${src}" alt="${alt}">`;
+    const alt = name.replace(/-fill$/, "").replace("-", " ");
+    return `<img class="icon" width="16" height="16" src="${src}" alt="${alt}">`;
   });
 };
 ```

@@ -63,9 +63,8 @@ module.exports = (config) => {
         loaders: [
           {
             loader: (content) => {
-              return `data:image/svg+xml;base64,${Buffer.from(content).toString(
-                "base64"
-              )}`;
+              const base64 = Buffer.from(content).toString("base64");
+              return `data:image/svg+xml;base64,${base64}`;
             },
           },
         ],
@@ -88,8 +87,8 @@ module.exports = (config) => {
   // Icon shortcode using Bootstrap Icons
   config.addShortcode("icon", (name) => {
     const src = `../node_modules/bootstrap-icons/icons/${name.toLowerCase()}.svg`;
-    const alt = name.replace("-", " ");
-    return `<img class="icon" width="18" height="18" src="${src}" alt="${alt}">`;
+    const alt = name.replace(/-fill$/, "").replace("-", " ");
+    return `<img class="icon" width="16" height="16" src="${src}" alt="${alt}">`;
   });
 
   if (process.env.ELEVENTY_ENV === "production") {
