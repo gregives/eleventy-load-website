@@ -147,7 +147,7 @@ const path = require("path");
 
 module.exports = function(content, options) {
     console.log(this.resourcePath); // assets/cat.jpeg
-    const resource = path.resolve(this.config.dir.input, this.resourcePath);
+    const resource = path.resolve(this.config.inputDir, this.resourcePath);
     const lastModifiedTime = fs.statSync(resource).mtime;
     ...
 };
