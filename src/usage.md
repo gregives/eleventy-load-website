@@ -51,12 +51,12 @@ Loaders are applied to files using 'rules'. A rule consists of a 'test' and a nu
 
 ```js
 {
-    test: /\.(md|html)$/,
-    loaders: [
-        {
-            loader: require("eleventy-load-html"),
-        },
-    ],
+  test: /\.(md|html)$/,
+  loaders: [
+    {
+      loader: require("eleventy-load-html"),
+    },
+  ],
 },
 ```
 

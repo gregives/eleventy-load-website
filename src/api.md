@@ -131,9 +131,8 @@ The filepath can contain substitutions, useful for creating hashed files.
 The current resource being processed, relative to the project's input directory. Use `this.resourcePath` and `this.resourceQuery` to access the path and the query respectively.
 
 ```js
-module.exports = function(content, options) {
-    console.log(this.resource); // assets/cat.jpeg?width=1920&height=1080&format=webp
-    ...
+module.exports = function (content, options) {
+  console.log(this.resource); // assets/cat.jpeg?width=1920&height=1080&format=webp
 };
 ```
 
@@ -145,11 +144,10 @@ The path of the current resource being processed, relative to the project's inpu
 const fs = require("fs");
 const path = require("path");
 
-module.exports = function(content, options) {
-    console.log(this.resourcePath); // assets/cat.jpeg
-    const resource = path.resolve(this.config.inputDir, this.resourcePath);
-    const lastModifiedTime = fs.statSync(resource).mtime;
-    ...
+module.exports = function (content, options) {
+  console.log(this.resourcePath); // assets/cat.jpeg
+  const resource = path.resolve(this.config.inputDir, this.resourcePath);
+  const lastModifiedTime = fs.statSync(resource).mtime;
 };
 ```
 
@@ -158,11 +156,10 @@ module.exports = function(content, options) {
 The query of the current resource being processed. You can use [URLSearchParams](https://nodejs.org/api/url.html#url_class_urlsearchparams) to easily parse the query.
 
 ```js
-module.exports = function(content, options) {
-    console.log(this.resourceQuery); // ?width=1920&height=1080&format=webp
-    const params = new URLSearchParams(this.resourceQuery);
-    console.log(params.get("format")); // webp
-    ...
+module.exports = function (content, options) {
+  console.log(this.resourceQuery); // ?width=1920&height=1080&format=webp
+  const params = new URLSearchParams(this.resourceQuery);
+  console.log(params.get("format")); // webp
 };
 ```
 
@@ -171,9 +168,8 @@ module.exports = function(content, options) {
 By default, the content of a resource is loaded as a UTF-8 string and passed to the first loader. By setting the `raw` flag to `true`, the loader will receive a raw `Buffer` instead of a `String`. This is useful for loaders which deal with binary filetypes, such as images.
 
 ```js
-module.exports = function(content, options) {
-    console.log(content instanceof Buffer); // true
-    ...
+module.exports = function (content, options) {
+  console.log(content instanceof Buffer); // true
 };
 
 module.exports.raw = true;
