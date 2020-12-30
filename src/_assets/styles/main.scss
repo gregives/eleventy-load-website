@@ -244,11 +244,12 @@ ol {
 }
 
 .anchor {
-  opacity: 0.1;
+  color: rgba(0, 0, 0, 0.1);
   text-decoration: none;
 
-  &:hover {
-    opacity: 0.5;
+  &:hover,
+  &:focus {
+    color: rgba(0, 0, 0, 0.5);
   }
 
   &::after {
