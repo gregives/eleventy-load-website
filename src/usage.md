@@ -1,3 +1,7 @@
+---
+title: Usage
+---
+
 # How to use eleventy-load
 
 ## 1. Install eleventy-load

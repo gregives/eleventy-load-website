@@ -1,3 +1,7 @@
+---
+title: API
+---
+
 # Writing a loader
 
 An eleventy-load loader is **just a JavaScript function**, nothing complicated! The function is passed two arguments: the `content` of the file being loaded and the user-provided `options` for the loader.

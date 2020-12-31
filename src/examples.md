@@ -1,3 +1,7 @@
+---
+title: Examples
+---
+
 # Examples
 
 {% for example in collections.example %}
