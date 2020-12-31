@@ -62,7 +62,15 @@ module.exports = (config) => {
         test: /\.svg$/,
         loaders: [
           {
-            loader: (content) => {
+            loader: function (content) {
+              const params = new URLSearchParams(this.resourceQuery);
+              if (params.has("fill")) {
+                // Change fill colour of SVG
+                content = content.replace(
+                  'fill="currentColor"',
+                  `fill="${params.get("fill")}"`
+                );
+              }
               const base64 = Buffer.from(content).toString("base64");
               return `data:image/svg+xml;base64,${base64}`;
             },
