@@ -93,12 +93,13 @@ module.exports = (config) => {
   });
 
   // Icon shortcode using Bootstrap Icons
-  config.addShortcode("icon", (name) => {
-    const src = `../node_modules/bootstrap-icons/icons/${name.toLowerCase()}.svg`;
+  config.addShortcode("icon", (name, query = "") => {
+    const src = `../node_modules/bootstrap-icons/icons/${name.toLowerCase()}.svg${query}`;
     const alt = name.replace(/-fill$/, "").replace("-", " ");
     return `<img class="icon" width="16" height="16" src="${src}" alt="${alt}">`;
   });
 
+  // Extract critical CSS in production
   if (process.env.ELEVENTY_ENV === "production") {
     config.addPlugin(require("eleventy-critical-css"), {
       minify: true,
@@ -116,6 +117,7 @@ module.exports = (config) => {
   // Options for markdown-it
   config.setLibrary("md", markdown);
 
+  // Watch the entire input directory
   config.addWatchTarget("./src/");
 
   return {

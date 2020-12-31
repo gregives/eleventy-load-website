@@ -72,6 +72,17 @@ h6 {
     &:not(:last-child) {
       margin-right: calc(1rem + 1vw);
     }
+
+    > .icon {
+      opacity: 0.5;
+    }
+
+    &:hover,
+    &:focus {
+      > .icon {
+        opacity: 1;
+      }
+    }
   }
 }
 
@@ -204,18 +215,11 @@ h6 {
 
 a {
   color: inherit;
+  text-decoration-color: #f78c6c !important;
 
   &:hover,
   &:focus {
     text-decoration: none;
-
-    > .icon {
-      opacity: 1;
-    }
-  }
-
-  > .icon {
-    opacity: 0.5;
   }
 }
 
@@ -239,8 +243,9 @@ ol {
 
 .icon {
   height: 1.2em;
-  margin-top: 0.15em;
+  margin-top: -0.2em;
   width: 1.2em;
+  vertical-align: middle;
 }
 
 .anchor {
