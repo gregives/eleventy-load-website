@@ -60,7 +60,7 @@ Loaders are applied to files using 'rules'. A rule consists of a 'test' and a nu
 },
 ```
 
-Note that the test is matched against the **input** filename, not the output.
+Note that the test is matched against the **input** filename, not the output, hence we need to apply eleventy-load-html to Markdown files as well as HTML files.
 
 We can set up rules so that eleventy-load imports Sass files using `link` elements.
 
