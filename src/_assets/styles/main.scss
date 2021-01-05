@@ -67,6 +67,22 @@ h6 {
     margin-bottom: 1rem;
     margin-right: 2rem;
     text-decoration: none;
+
+    @keyframes flash {
+      0% {
+        filter: none;
+      }
+      50% {
+        filter: drop-shadow(0 0 0.1rem #f78c6c);
+      }
+      100% {
+        filter: none;
+      }
+    }
+
+    > .icon {
+      animation: 600ms ease 3 flash;
+    }
   }
 
   &__links {
