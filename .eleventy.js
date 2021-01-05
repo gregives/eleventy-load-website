@@ -57,10 +57,23 @@ module.exports = (config) => {
         ],
       },
       {
-        test: /\.woff2?$/,
+        test: /\.(woff2?)$/,
         loaders: [
           {
             loader: require("eleventy-load-file"),
+          },
+        ],
+      },
+      {
+        test: /\.png$/,
+        loaders: [
+          {
+            loader: (function () {
+              const loader = (content) =>
+                `data:image/png;base64,${content.toString("base64")}`;
+              loader.raw = true;
+              return loader;
+            })(),
           },
         ],
       },
