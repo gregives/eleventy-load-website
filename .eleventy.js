@@ -30,6 +30,9 @@ module.exports = (config) => {
           },
           {
             loader: require("eleventy-load-css"),
+            options: {
+              minimize: process.env.ELEVENTY_ENV === "production",
+            },
           },
           {
             loader: require("eleventy-load-file"),
@@ -44,6 +47,9 @@ module.exports = (config) => {
         loaders: [
           {
             loader: require("eleventy-load-js"),
+            options: {
+              mode: process.env.ELEVENTY_ENV || "production",
+            },
           },
           {
             loader: require("eleventy-load-file"),
