@@ -124,11 +124,11 @@ module.exports = async function (content, options) {
 };
 ```
 
-The filepath can contain substitutions, useful for creating hashed files.
+The filepath can contain placeholders, useful for creating hashed files. The following placeholders are replaced:
 
-- `[hash]` or `[hash:N]` will be replaced with a hash of the content. Specify `N` to change the length of the hash, which defaults to 8 characters.
-- `[name]` will be replaced with the original filename.
-- `[ext]` will be replaced with the original file's extension.
+- `[ext]` the extension of the resource
+- `[name]` the basename of the resource
+- `[hash]` or `[hash:N]` the hash of the content of the resource, length `N` defaults to 8 characters
 
 ### this.resource
 
