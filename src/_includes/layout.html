@@ -10,6 +10,12 @@ description: Making Eleventy sites easy
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title }}{% if title and site %} | {% endif %}{{ site }}</title>
     <meta name="description" content="{{ description }}" />
+    <link
+      rel="preload"
+      href="_assets/styles/files/inter-latin-400-normal.woff2"
+      as="font"
+      crossorigin
+    />
     <link rel="stylesheet" href="_assets/styles/main.scss" />
     <link
       rel="shortcut icon"
