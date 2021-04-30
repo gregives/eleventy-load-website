@@ -128,6 +128,7 @@ The filepath can contain placeholders, useful for creating hashed files. The fol
 
 - `[ext]` the extension of the resource
 - `[name]` the basename of the resource
+- `[dir]` the directory of the resource
 - `[hash]` or `[hash:N]` the hash of the content of the resource, length `N` defaults to 8 characters
 
 ### this.resource

@@ -102,6 +102,35 @@ module.exports = function (eleventyConfig) {
 };
 ```
 
+### Optionally test the resource query
+
+<details>
+<summary>Specify <code>resourceQuery</code> to test the query parameters of the requested resource.</summary>
+
+The following configuration will add inline styles for any resource loaded with `inline` in the query parameter, for example, `example.scss?inline`.
+
+```js
+{
+  test: /\.scss$/,
+  resourceQuery: /inline/,
+  loaders: [
+    {
+      loader: require("eleventy-load-sass"),
+    },
+    {
+      loader: require("eleventy-load-css"),
+    },
+    {
+      loader: (content) => {
+        return `<style>${content}</style>`;
+      },
+    },
+  ],
+}
+```
+
+</details>
+
 ## 5. You're ready to go
 
 That's all it takes to set up eleventy-load to import Sass files using `link` elements.
